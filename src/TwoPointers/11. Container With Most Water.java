@@ -21,3 +21,17 @@ class Solution {
         return max;
     }
 }
+class Solution_2nd {
+    public int maxArea(int[] height) {
+        int left=0;
+        int right=height.length-1;
+        int maxres=0;
+        while(left<right){
+            int temp=(right-left)*(Math.min(height[left], height[right]));
+            maxres=Math.max(maxres, temp);
+            if(height[left]<=height[right]) left++;
+            else{right--;}
+        }
+        return maxres;
+    }
+}

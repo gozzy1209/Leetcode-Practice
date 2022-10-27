@@ -2,6 +2,7 @@ import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 
 class Solution {
@@ -39,5 +40,27 @@ class Solution {
             }
         }
         return new ArrayList(map.values());
+    }
+}
+class Solution_2nd {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        //tochararray() and valueof() are important
+        if(strs.length==0) return new ArrayList<>();
+        // create HashMap<String,List> is important, especially about the "List"
+        HashMap<String,List<String>> map=new HashMap<>();
+        for(String s:strs){
+            char[] arr=s.toCharArray();
+            Arrays.sort(arr);
+            String temp=String.valueOf(arr);
+            if(map.containsKey(temp)) map.get(temp).add(s);
+            else{
+                List<String> list=new ArrayList<>();
+                list.add(s);
+                map.put(temp, list);
+            }
+        }
+        List<List<String>> res=new ArrayList<>();
+        res.addAll(map.values());
+        return res;
     }
 }

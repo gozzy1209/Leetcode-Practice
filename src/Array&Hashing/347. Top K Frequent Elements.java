@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -30,24 +31,26 @@ class Solution {
                 map.put(s, 1);
             }
         }
-        //666
-        //上面都是对的，但是下面还没解决
-        //现在的问题是：如何识别出出现频率前k高的key，并放到数组中
-        List<Integer> arr=new ArrayList<>();
-        for(int x:map.values()){
-            arr.add(x);
+        
+    // then using bucket sort(List<Integer>[] bucket=new List[nums.length+1]) to sort
+        List<Integer>[] bucket=new List[nums.length+1];
+        for(int n:map.keySet()){
+            int freq=map.get(n);//return n's value
+            if(bucket[freq]==null){
+                bucket[freq]=new LinkedList<>();
+            }
+            bucket[freq].add(n);
         }
-        Collections.sort(arr);//xxx
-        int[] brr=new int[k];
-        int indexnow=0;
-        for(int i=arr.size()-1;i>=arr.size()-k;i--){
-            Set<Map.Entry<Integer,Integer>> entry = map.entrySet();
-            Object key=((java.util.Map.Entry<Integer, Integer>) entry).getKey();
-            int keykey=Integer.parseInt(String.valueOf(key));
-            brr[indexnow]=keykey;
-            indexnow++;
+
+        int[] res=new int[k];//add result
+        for(int i=bucket.length-1, j=0;i>=0&&j<k;i--){
+            if(bucket[i]!=null){
+                for(int n:bucket[i]){
+                    res[j++]=n;
+                }
+            }
         }
-        return brr;
+        return res;
         
     }
 }

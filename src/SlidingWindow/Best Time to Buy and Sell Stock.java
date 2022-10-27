@@ -19,3 +19,14 @@ class Solution {
         return profit;
     }
 }
+class Solution_2nd {
+    public int maxProfit(int[] prices) {
+        int lowestprice=Integer.MAX_VALUE;
+        int bestprofit=Integer.MIN_VALUE;
+        for(int i:prices){
+            lowestprice=Math.min(i, lowestprice);
+            bestprofit=Math.max(i-lowestprice, bestprofit);
+        }
+        return bestprofit;
+    }
+}
