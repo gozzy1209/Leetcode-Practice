@@ -1,4 +1,3 @@
 # Ignore system file
 .vscode
 bin
-lib
