@@ -43,3 +43,19 @@ public class ValidParentheses {
     }
     
 }
+class Solution_2ndtry {
+    public boolean isValid(String s) {
+        Stack<Character> stack=new Stack<>();
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)=='(') stack.add(')');
+            else if(s.charAt(i)=='{') stack.add('}');
+            else if(s.charAt(i)=='[') stack.add(']');
+            else{
+                //stack.isEmpty() is to prevent too much ] } or )
+                if(stack.isEmpty()||stack.pop()!=s.charAt(i)) return false;
+            }
+        }
+        ////stack.isEmpty() is to prevent too much { [ or (
+        return stack.isEmpty();
+    }
+}

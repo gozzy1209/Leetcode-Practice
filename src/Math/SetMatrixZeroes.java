@@ -3,9 +3,6 @@ package Math;
 import java.util.Stack;
 
 public class SetMatrixZeroes {
-    
-}
-class Solution {
     public void setZeroes(int[][] matrix) {
         int row_first=1;
         for(int i=0;i<matrix.length;i++){
@@ -43,3 +40,4 @@ class Solution {
         
     }
 }
+

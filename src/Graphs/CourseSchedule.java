@@ -24,14 +24,12 @@ class Solution {
         }
 
         //create the dependency graph
-        for(int i=0;i<prerequisites.length;i++){
-            list.get(prerequisites[i][1]).add
-
-        }
+       
 
 
         //设置一个，左边存当前course，右边存prerequisite course
         
+        return false;
     }
     private void name() {
         

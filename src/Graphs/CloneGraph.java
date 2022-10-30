@@ -45,13 +45,13 @@ class Solution {
             return map.get(node);
         }
         //如果没有当前结点，那就map put当前结点
-        map.put(node, new Node(node.val));
+        //map.put(node, new Node(node.val));
         //创建当前结点的clone结点
         Node clone=map.get(node);
         //然后把当前结点的neighbor关系也复制到当前clone结点的neighbor关系
-        for(Node nei:node.neighbors){
-            clone.neighbors.add(clone_dfs(nei,map));
-        }
+        //for(Node nei:node.neighbors){
+        //    clone.neighbors.add(clone_dfs(nei,map));
+        //}
         //最后返回当前结点的clone结点（不仅复制了值，还复制了neighbor关系
         return clone;
     }

@@ -5,9 +5,6 @@ import java.util.LinkedList;
 
 //56Merge Intervals
 public class MergeIntervals {
-    
-}
-class Solution {
     public int[][] merge(int[][] intervals) {
         LinkedList<int[]> res=new LinkedList<>();
         Arrays.sort(intervals, (a,b) -> a[0]-b[0]);

@@ -4,9 +4,6 @@ import java.util.Arrays;
 
 //435Non-overlapping Intervals
 public class NonOverlappingIntervals {
-    
-}
-class Solution {
     public int eraseOverlapIntervals(int[][] intervals) {
         Arrays.sort(intervals, (a,b) -> a[0]-b[0]);
         //排序后，让每个元素的结尾都尽可能远离下个元素的开头

@@ -4,9 +4,6 @@ package Trees;
 
 A subtree of a binary tree tree is a tree that consists of a node in tree and all of this node's descendants. The tree tree could also be considered as a subtree of itself. */
 public class SubtreeofAnotherTree {
-    
-}
-class Solution {
     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
         if(subRoot==null){
             return true;

@@ -1,9 +1,6 @@
 package TwoPointers;
 //42Trapping Rain Water
 public class TrappingRainWater {
-    
-}
-class Solution {
     public int trap(int[] height) {
         int l = 0, r = height.length - 1, sum = 0, lMax = 0, rMax = 0;
         while(l <= r){
@@ -19,3 +16,4 @@ class Solution {
         return sum;
     }
 }
+

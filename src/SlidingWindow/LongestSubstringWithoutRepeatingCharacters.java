@@ -28,7 +28,7 @@ class LongestSubstringWithoutRepeatingCharacters {
         return maxlen;
     }
 }
-class Solution_2nd {
+class LongestSubstringWithoutRepeatingCharacters_2nd {
     public int lengthOfLongestSubstring(String s) {
         //using set
         Set<Character> set=new HashSet<>();

@@ -10,9 +10,6 @@ The right subtree of a node contains only nodes with keys greater than the node'
 Both the left and right subtrees must also be binary search trees.
  */
 public class ValidateBinarySearchTree {
-    
-}
-class Solution {
     public boolean isValidBST(TreeNode root) {
         int min=Integer.MIN_VALUE;
         int max=Integer.MAX_VALUE;
@@ -28,5 +25,5 @@ class Solution {
         }
         return ValidBST(root.left, min, root.val)&&ValidBST(root.right, root.val, max);
         }
-
 }
+

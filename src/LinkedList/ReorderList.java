@@ -23,8 +23,10 @@ class ListNode {
 
 class Solution {
     public void reorderList(ListNode head) {
-        思路大概懂了，代码大部分也正确，但是真的实现不了
-       //把linked list分为前后两部分
+        //思路大概懂了，代码大部分也正确，但是真的实现不了!!!
+       
+       
+        //把linked list分为前后两部分
        //对后半部分second 进行反转
        //对于前半部分和后半部分进行交叉合并
 

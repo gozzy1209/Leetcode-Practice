@@ -5,9 +5,6 @@ import java.util.List;
 
 //54Spiral Matrix
 public class SpiralMatrix {
-    
-}
-class Solution {
     public List<Integer> spiralOrder(int[][] matrix) {
         int rowBegin = 0;
         int rowEnd = matrix.length-1;

@@ -9,23 +9,7 @@ import java.util.Stack;
 
 A binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node. */
 class MaximumDepthofBinaryTree {
-    
-}
-class TreeNode {
-         int val;
-         TreeNode left;
-         TreeNode right;
-         TreeNode() {}
-         TreeNode(int val) { this.val = val; }
-         TreeNode(int val, TreeNode left, TreeNode right) {
-             this.val = val;
-             this.left = left;
-             this.right = right;
-         }
-     }
-    
-   class Solution {
-       public int maxDepth_recursive(TreeNode root) {
+    public int maxDepth_recursive(TreeNode root) {
         //recursive
         //dfs
            if(root==null){return 0;}
@@ -83,7 +67,19 @@ class TreeNode {
         }
         return count;
        }
+}
+class TreeNode {
+         int val;
+         TreeNode left;
+         TreeNode right;
+         TreeNode() {}
+         TreeNode(int val) { this.val = val; }
+         TreeNode(int val, TreeNode left, TreeNode right) {
+             this.val = val;
+             this.left = left;
+             this.right = right;
+         }
+}
+    
 
-          
-   }
 

@@ -4,9 +4,6 @@ package Trees;
 
 According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).” */
 public class LowestCommonAncestorofaBinarySearchTree {
-    
-}
-class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         //判断ancestor的条件是，p和q一个在ancestor左边，一个在右边
         //这个判断条件太难想到了，非常关键
@@ -23,3 +20,4 @@ class Solution {
         
     }
 }
+
