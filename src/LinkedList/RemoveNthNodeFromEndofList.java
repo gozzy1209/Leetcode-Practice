@@ -51,4 +51,23 @@ class ListNode {
      }
      return pre;
     }
+
+    class solution_2{
+        public ListNode removeNthFromEnd(ListNode head, int n) {
+            //快慢指针来求解
+            ListNode start = new ListNode(0);
+            ListNode slow = start, fast = start;
+            slow.next = head;
+            //i=1;i<=n+1 很关键
+            for(int i=1;i<=n+1;i++){
+                fast=fast.next;
+            }
+            while(fast!=null){
+                fast=fast.next;
+                slow=slow.next;
+            }
+            slow.next=slow.next.next;
+            return start.next;
+        }
+    }
    }

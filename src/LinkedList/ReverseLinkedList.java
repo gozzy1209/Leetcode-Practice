@@ -20,8 +20,7 @@ public class ReverseLinkedList {
         //iterative方法
         ListNode pre=null;
         ListNode cur=head;
-        // temp 和 pre其实都是变量，认真理解这里
-        //为什么不需要cur.next!=null,因为允许cur.next为null，但是不允许null.next的出现而已
+        //we don't use cur.next!=null,because we allow cur.next is null，but don't allow sth like null.next
         while(cur!=null){
             ListNode temp=cur.next;
             cur.next=pre;
@@ -31,7 +30,7 @@ public class ReverseLinkedList {
         return pre;
     }
 
-    public ListNode reverseList2(ListNode head) {
+    public ListNode reverseList_2nd(ListNode head) {
         //recursive方法
         //先判断当前结点head是不是空结点或者是tail结点（head。next==null）
         if(head == null || head.next == null){
@@ -41,17 +40,40 @@ public class ReverseLinkedList {
         //对当前结点的下一个结点进行回溯
         //ListNode newnode这一步很重要，想想为什么要多次一举创建newnode，相当于temp
         //为什么是reverseList(head.next)，而不是reverseList(head)
-        ListNode newnode=reverseList2(head.next);
+        ListNode newnode=reverseList_2nd(head.next);
         //进行当前结点的反转操作
-        //下一个结点的再下一个结点就是当前结点（相当于反转）
+        //让下个结点指向当前结点
         head.next.next=head;
-        //下一个结点变成null，说明上一步的head.next.next就是头节点
+        //让当前结点指向null
         head.next=null;
         //回溯方法中的return这个地方一定是，没到最后那个点我就不返回实际值先
         return newnode;
-
-
     }
+    public ListNode reverseList_3rd(ListNode head) {
+        ListNode pre=null;
+        ListNode cur=head;
+        while(cur!=null){
+            ListNode temp=cur.next;
+            cur.next=pre;
+            pre=cur;
+            cur=temp;
+        }
+        //because cur is null and pre isn't null
+        return pre;
+    }
+    public ListNode reverseList_4th(ListNode head) {
+        //recursive again
+         if(head==null||head.next==null){
+            return head;
+         }
+         ListNode finalnode=head;
+         //为什么递归不能用iteration里面的pre结点方法，因为唯一的传递参数只有当前结点head，我们不知道它的过去，因此只能让它的未来指向它的现在
+         finalnode=reverseList_4th(head.next);
+         head.next.next=head;
+         head.next=null;
+         return finalnode;
+
+
 
     class ListNode {
              int val;
