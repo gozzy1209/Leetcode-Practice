@@ -34,7 +34,24 @@ class Solution {
             res.add(temp);
         }
         return res;
-
-
+    }
+    public List<List<Integer>> levelOrder_2ndtry(TreeNode root) {
+        Queue<TreeNode> queue=new LinkedList<>();
+        List<List<Integer>> res=new LinkedList<>();
+        if(root!=null){
+            queue.offer(root);
+        }
+        while(!queue.isEmpty()){
+            int size=queue.size();
+            List<Integer> temp=new LinkedList<>();
+            for(int i=0;i<size;i++){
+                TreeNode out=queue.poll();
+                temp.add(out.val);
+                if(out.left!=null) queue.offer(out.left);
+                if(out.right!=null) queue.offer(out.right);
+            }
+            res.add(temp);
+        }
+        return res;
     }
 }

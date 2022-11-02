@@ -13,7 +13,8 @@ class MaximumDepthofBinaryTree {
         //recursive
         //dfs
            if(root==null){return 0;}
-           return Math.max(maxDepth_recursive(root.left)+1, maxDepth_recursive(root.right)+1);
+           //1 represents the root itself
+           return 1+Math.max(maxDepth_recursive(root.left), maxDepth_recursive(root.right));
        }
 
        public int maxDepth_dfs(TreeNode root) {
@@ -44,6 +45,7 @@ class MaximumDepthofBinaryTree {
        public int maxDepth_bfs(TreeNode root) {
         //bfs 一层一层数，而不是像dfs直接深入到最底
         //use queue
+        // queue.offer(),TreeNode node=queue.poll(),int size=queue.size() are critical
         if(root==null){return 0;}
         //queue 的本质还是linkedlist？
         Queue<TreeNode> queue=new LinkedList<>();
@@ -51,12 +53,13 @@ class MaximumDepthofBinaryTree {
         queue.offer(root);
         int count=0;
         while(!queue.isEmpty()){
+            //扫描size
             int size=queue.size();
+            //只传出size个元素，即一层全部元素，多一个不多，少一个不少
             while(size-->0){
-                //remove head element
-                //把同一层全部元素传出，把下一全部元素传入
                 TreeNode node=queue.poll();
                 if(node.left!=null){
+                    //传入下一层元素
                     queue.offer(node.left);
                 }
                 if(node.right!=null){

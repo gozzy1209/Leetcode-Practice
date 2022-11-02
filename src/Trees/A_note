@@ -1,0 +1,3 @@
+//using recursive method or stack is important for tree's DFS problem
+//using queue is for tree's BFS problem(queue is a kind of linkedlist)
+//104. Maximum Depth of Binary Tree contain all methods, it is so classic

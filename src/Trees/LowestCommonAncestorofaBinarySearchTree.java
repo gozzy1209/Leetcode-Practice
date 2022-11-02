@@ -6,7 +6,7 @@ According to the definition of LCA on Wikipedia: “The lowest common ancestor i
 public class LowestCommonAncestorofaBinarySearchTree {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         //判断ancestor的条件是，p和q一个在ancestor左边，一个在右边
-        //这个判断条件太难想到了，非常关键
+        //这个判断条件太难想到了，非常关键（但是这就是BST binary search tree的特点）
         
         //all in right
         if(p.val>root.val&&q.val>root.val){
